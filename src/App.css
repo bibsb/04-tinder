@@ -32,6 +32,7 @@ input {
     background: grey;
     border: 2px solid darkgrey;
   }
+
 }
 #no {
   background: red;
@@ -57,5 +58,8 @@ input {
     padding: 10px;
     border-radius: 0;
     background: hotpink;
+  }
+    &:hover {
+    font-size: 20px;
   }
 }

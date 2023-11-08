@@ -9,29 +9,50 @@ function App() {
   // crea un array de 24 elementos sin tener q poner tu uno a uno
   // y como queremos de 1 a 24 le decimos q cada elemento sume uno para q no empiece de 0
   const [liked, setLiked] = useState(0);
+  const [resetMode, setResetMode] = useState(false);
 
   const like = (type) => {
     if (type === 'si') {
       setLiked(liked + 1);
     }
+    const tempPeople = [...people];
+    tempPeople.shift();
+    setPeople(tempPeople);
+    if (tempPeople.length === 0) {
+      setResetMode(true);
+    }
   };
+  //opcitón RESET al terminar
+  if (resetMode) {
+    return <div id="reset">
+      <h1>Ya no queda más gente</h1>
+      <button onClick={() => location.reload()}>Reinicia</button>
+    </div>
+  }
+
+ 
 
   return (
     <>
       <div
         id="contenedor-imagen"
-        style={{ backgroundImage: `url('../images/1.png')` }}
+        style={{
+          backgroundImage:
+            people.length > 0 ? `url('../images/${people[0]}.png')` : 'none',
+        }}
       />
       <div id="contenedor-botones">
         <input
           type="button"
           id="si"
+          disabled={people.length === 0}
           value="Me gusta"
           onClick={() => like('si')}
         />
         <input
           type="button"
           id="no"
+          disabled={people.length === 0}
           value="No me gusta"
           onClick={() => like('no')}
         />
