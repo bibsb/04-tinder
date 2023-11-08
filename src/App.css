@@ -1,0 +1,61 @@
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+#contenedor-imagen {
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  background-color: grey;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 30px;
+}
+
+#contenedor-botones {
+  display: flex;
+  width: 500px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+input {
+  padding: 10px;
+  width: 240px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+}
+#si {
+  background: green;
+  border: 2px solid darkgreen;
+  &:disabled {
+    background: grey;
+    border: 2px solid darkgrey;
+  }
+}
+#no {
+  background: red;
+  border: 2px solid darkred;
+  &:disabled {
+    background: grey;
+    border: 2px solid darkgrey;
+  }
+}
+#te-gustan {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 40px;
+  font-weight: lighter;
+}
+#reset {
+  padding-top: 200px;
+  width: 500px;
+  margin: auto;
+  text-align: center;
+  button {
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 0;
+    background: hotpink;
+  }
+}
